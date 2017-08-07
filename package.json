@@ -4,8 +4,8 @@
     "description": "JustGage component for Angular 4",
     "license": "MIT",
     "author": "BeeWaTec AG",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/app/index.js",
+    "types": "dist/app/index.d.ts",
     "angular-cli": {},
     "scripts": {
         "build:library": "angular-library-builder --rootDir src --outDir dist"
