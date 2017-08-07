@@ -12,6 +12,7 @@ export class JustgageComponent implements OnInit, OnChanges {
 
   @Input() options: any = {};
   @Input() value: number = 0;
+  @Input() min: number = 100;
   @Input() max: number = 100;
 
   constructor(private elementRef: ElementRef) { }
@@ -25,8 +26,12 @@ export class JustgageComponent implements OnInit, OnChanges {
       if (changes['options']) {
         this.elementRef.nativeElement.innerHTML = '';
         this.create();
-      } else if (changes['max'] || changes['value']) {
-        this.justgage.refresh(this.value, this.max);
+      } else if (changes['value']) {
+        this.justgage.refresh(this.value);
+      } else if(changes['max']){
+        this.justgage.setNewMax(this.max)
+      } else if(changes['min']){
+        this.justgage.setNewMin(this.min)
       }
     }
   }
