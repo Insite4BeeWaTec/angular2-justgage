@@ -1,5 +1,7 @@
-# angular2-justgage
-JustGage component for Angular2
+# ngx-justgage
+JustGage component for Angular 4
+
+This is a modified and updated version of: https://github.com/emn178/angular2-justgage
 
 ## Installation
 You can install angular2-justgage by using npm.
@@ -50,7 +52,3 @@ Set maximum value.
 
 ## License
 The project is released under the [MIT license](http://www.opensource.org/licenses/MIT).
-
-## Contact
-The project's website is located at https://github.com/emn178/angular2-justgage  
-Author: Chen, Yi-Cyuan (emn178@gmail.com)
