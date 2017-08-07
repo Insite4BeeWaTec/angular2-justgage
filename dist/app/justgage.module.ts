@@ -1,4 +1,4 @@
-window['Raphael'] = require('raphael');
+import * as Raphael from 'raphael';
 import 'justgage';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,4 +12,8 @@ import { JustgageComponent } from './justgage.component';
   declarations: [ JustgageComponent ],
   exports: [ JustgageComponent ]
 })
-export class JustgageModule { }
+export class JustgageModule {
+  constructor(){
+    window['Raphael'] = Raphael;
+  }
+}

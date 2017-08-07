@@ -1,9 +1,10 @@
-window['Raphael'] = require('raphael');
+import * as Raphael from 'raphael';
 import 'justgage';
 import { NgModule } from '@angular/core';
 import { JustgageComponent } from './justgage.component';
 var JustgageModule = (function () {
     function JustgageModule() {
+        window['Raphael'] = Raphael;
     }
     JustgageModule.decorators = [
         { type: NgModule, args: [{
