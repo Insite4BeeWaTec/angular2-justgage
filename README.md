@@ -6,13 +6,13 @@ This is a modified and updated version of: https://github.com/emn178/angular2-ju
 ## Installation
 You can install angular2-justgage by using npm.
 ```
-npm install angular2-justgage
+npm install https://github.com/Insite4BeeWaTec/ngx-justgage
 ```
 
 ## Usage
 Add `JustgageModule` to your module, eg.
 ```JavaScript
-import { JustgageModule } from 'angular2-justgage';
+import { JustgageModule } from 'ngx-justgage';
 
 @NgModule({
   imports: [ JustgageModule ]
