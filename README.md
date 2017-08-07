@@ -4,7 +4,7 @@ JustGage component for Angular 4
 This is a modified and updated version of: https://github.com/emn178/angular2-justgage
 
 ## Installation
-You can install angular2-justgage by using npm.
+You can install ngx-justgage by using npm.
 ```
 npm install https://github.com/Insite4BeeWaTec/ngx-justgage
 ```
