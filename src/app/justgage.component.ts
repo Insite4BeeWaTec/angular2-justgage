@@ -10,7 +10,7 @@ declare var JustGage: any;
 export class JustgageComponent implements OnInit, OnChanges {
   justgage: any;
 
-  options: any = {};
+  @Input() options: any = {};
   @Input() value: number = 0;
   @Input() min: number = 100;
   @Input() max: number = 100;

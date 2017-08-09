@@ -47,6 +47,7 @@ var JustgageComponent = (function () {
         { type: ElementRef, },
     ]; };
     JustgageComponent.propDecorators = {
+        'options': [{ type: Input },],
         'value': [{ type: Input },],
         'min': [{ type: Input },],
         'max': [{ type: Input },],
