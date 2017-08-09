@@ -4,19 +4,26 @@ var JustgageComponent = (function () {
         this.elementRef = elementRef;
         this.options = {};
         this.value = 0;
+        this.min = 100;
         this.max = 100;
+        this.unit = "";
     }
     JustgageComponent.prototype.ngOnInit = function () {
         this.create();
     };
     JustgageComponent.prototype.ngOnChanges = function (changes) {
         if (this.justgage) {
-            if (changes['options']) {
-                this.elementRef.nativeElement.innerHTML = '';
-                this.create();
+            if (changes['value']) {
+                this.justgage.refresh(this.value);
             }
-            else if (changes['max'] || changes['value']) {
-                this.justgage.refresh(this.value, this.max);
+            else if (changes['max']) {
+                this.justgage.setNewMax(this.max);
+            }
+            else if (changes['min']) {
+                this.justgage.setNewMin(this.min);
+            }
+            else if (changes['unit']) {
+                this.justgage.setNewUnit(this.unit);
             }
         }
     };
@@ -25,6 +32,7 @@ var JustgageComponent = (function () {
         this.options.parentNode = this.elementRef.nativeElement;
         this.options.max = this.max;
         this.options.value = this.value;
+        this.options.unit = this.unit;
         this.justgage = new JustGage(this.options);
     };
     JustgageComponent.decorators = [
@@ -39,9 +47,10 @@ var JustgageComponent = (function () {
         { type: ElementRef, },
     ]; };
     JustgageComponent.propDecorators = {
-        'options': [{ type: Input },],
         'value': [{ type: Input },],
+        'min': [{ type: Input },],
         'max': [{ type: Input },],
+        'unit': [{ type: Input },],
     };
     return JustgageComponent;
 }());

@@ -10,9 +10,11 @@ declare var JustGage: any;
 export class JustgageComponent implements OnInit, OnChanges {
   justgage: any;
 
-  @Input() options: any = {};
+  options: any = {};
   @Input() value: number = 0;
+  @Input() min: number = 100;
   @Input() max: number = 100;
+  @Input() unit: string = "";
 
   constructor(private elementRef: ElementRef) { }
 
@@ -22,11 +24,14 @@ export class JustgageComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.justgage) {
-      if (changes['options']) {
-        this.elementRef.nativeElement.innerHTML = '';
-        this.create();
-      } else if (changes['max'] || changes['value']) {
-        this.justgage.refresh(this.value, this.max);
+      if (changes['value']) {
+        this.justgage.refresh(this.value);
+      } else if(changes['max']){
+        this.justgage.setNewMax(this.max)
+      } else if(changes['min']){
+        this.justgage.setNewMin(this.min)
+      } else if(changes['unit']){
+        this.justgage.setNewUnit(this.unit)
       }
     }
   }
@@ -36,6 +41,7 @@ export class JustgageComponent implements OnInit, OnChanges {
     this.options.parentNode = this.elementRef.nativeElement;
     this.options.max = this.max;
     this.options.value = this.value;
+    this.options.unit = this.unit;
     this.justgage = new JustGage(this.options);
   }
 }

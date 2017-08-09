@@ -4,7 +4,9 @@ export declare class JustgageComponent implements OnInit, OnChanges {
     justgage: any;
     options: any;
     value: number;
+    min: number;
     max: number;
+    unit: string;
     constructor(elementRef: ElementRef);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
