@@ -13,18 +13,14 @@ var JustgageComponent = (function () {
     };
     JustgageComponent.prototype.ngOnChanges = function (changes) {
         if (this.justgage) {
-            if (changes['value']) {
-                this.justgage.refresh(this.value);
-            }
-            else if (changes['max']) {
+            if (changes['max'])
                 this.justgage.setNewMax(this.max);
-            }
-            else if (changes['min']) {
+            if (changes['min'])
                 this.justgage.setNewMin(this.min);
-            }
-            else if (changes['unit']) {
+            if (changes['unit'])
                 this.justgage.setNewUnit(this.unit);
-            }
+            if (changes['value'])
+                this.justgage.setNewValue(this.value);
         }
     };
     JustgageComponent.prototype.create = function () {

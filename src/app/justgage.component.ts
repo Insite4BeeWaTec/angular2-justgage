@@ -24,15 +24,10 @@ export class JustgageComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.justgage) {
-      if (changes['value']) {
-        this.justgage.refresh(this.value);
-      } else if(changes['max']){
-        this.justgage.setNewMax(this.max)
-      } else if(changes['min']){
-        this.justgage.setNewMin(this.min)
-      } else if(changes['unit']){
-        this.justgage.setNewUnit(this.unit)
-      }
+      if(changes['max']) this.justgage.setNewMax(this.max)
+      if(changes['min']) this.justgage.setNewMin(this.min)
+      if(changes['unit']) this.justgage.setNewUnit(this.unit)
+      if(changes['value']) this.justgage.setNewValue(this.value);
     }
   }
 
