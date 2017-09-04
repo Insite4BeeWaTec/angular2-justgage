@@ -3,7 +3,7 @@ Original (angular2-justgage) by emn178 (https://github.com/emn178/angular2-justg
   
 To make this library work, you require my version of JustGage (https://github.com/Insite4BeeWaTec/justgage).  
   
-The goal ist to make the most of the options "Dynamicly". That means, you can easily change options and they will be changed without reloading the complete DOM-Object. To do that with Angular, you need this modified version of NGX-Charts.  
+The goal is to make the most of the options "Dynamicly". That means, you can easily change options and they will be changed without reloading the complete DOM-Object. To do that with Angular, you need this modified version of NGX-Charts.  
   
 This Version works best with Angular 4  
   
