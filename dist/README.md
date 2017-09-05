@@ -1,17 +1,23 @@
-# ngx-justgage
-JustGage component for Angular 4
-
-This is a modified and updated version of: https://github.com/emn178/angular2-justgage
-
-## Installation
-You can install ngx-justgage by using npm.
-```
-npm install https://github.com/Insite4BeeWaTec/ngx-justgage
-```
-
-## Usage
-Add `JustgageModule` to your module, eg.
-```JavaScript
+# NGX-JustGage
+Original (angular2-justgage) by emn178 (https://github.com/emn178/angular2-justgage)  
+  
+To make this library work, you require my version of JustGage (https://github.com/Insite4BeeWaTec/justgage).  
+  
+The goal is to make the most of the options "Dynamicly". That means, you can easily change options and they will be changed without reloading the complete DOM-Object. To do that with Angular, you need this modified version of NGX-Charts.  
+  
+This Version works best with Angular 4  
+  
+# Installlation  
+  
+You can install ngx-justgage by using npm.  
+  
+<code>npm install https://github.com/Insite4BeeWaTec/ngx-justgage</code>  
+  
+Usage  
+  
+Add JustgageModule to your module, eg.  
+  
+<code>
 import { JustgageModule } from 'ngx-justgage';
 
 @NgModule({
@@ -20,35 +26,27 @@ import { JustgageModule } from 'ngx-justgage';
 })
 export class AppModule {
 }
-```
-And you can use selector `justgage` in your template.
-
-JavaScript
-```JavaScript
+</code>
+  
+And you can use selector justgage in your template.  
+  
+## JavaScript  
+  
+<code>
 options = {
   min: 0,
   title: 'Visitors'
 };
 max = 100;
 value = 67;
-```
-HTML
-```HTML
+</code>
+  
+## HTML  
+  
+<code>
 <justgage [options]="options" [max]="max" [value]="value"></justgage>
-```
+</code>
 
-## Options
-### [options]
-*object*  
-To create a justgage with configuration options, simply pass an object containing your configuration to the constructor.
+# License
 
-### [value]
-*number*
-Set current value.
-
-### [max]
-*number*
-Set maximum value.
-
-## License
-The project is released under the [MIT license](http://www.opensource.org/licenses/MIT).
+The project is released under the MIT license.

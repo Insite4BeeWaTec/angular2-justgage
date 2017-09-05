@@ -4,9 +4,10 @@ var JustgageComponent = (function () {
         this.elementRef = elementRef;
         this.options = {};
         this.value = 0;
-        this.min = 100;
+        this.min = 0;
         this.max = 100;
         this.unit = "";
+        this.backgroundForegroundSwapped = false;
     }
     JustgageComponent.prototype.ngOnInit = function () {
         this.create();
@@ -21,14 +22,18 @@ var JustgageComponent = (function () {
                 this.justgage.setNewUnit(this.unit);
             if (changes['value'])
                 this.justgage.setNewValue(this.value);
+            if (changes['backgroundForegroundSwapped'])
+                this.justgage.setBackgroundForegroundSwapped(this.backgroundForegroundSwapped);
         }
     };
     JustgageComponent.prototype.create = function () {
         delete this.options.id;
         this.options.parentNode = this.elementRef.nativeElement;
         this.options.max = this.max;
+        this.options.min = this.min;
         this.options.value = this.value;
         this.options.unit = this.unit;
+        this.options.backgroundForegroundSwapped = this.backgroundForegroundSwapped;
         this.justgage = new JustGage(this.options);
     };
     JustgageComponent.decorators = [
@@ -48,6 +53,7 @@ var JustgageComponent = (function () {
         'min': [{ type: Input },],
         'max': [{ type: Input },],
         'unit': [{ type: Input },],
+        'backgroundForegroundSwapped': [{ type: Input },],
     };
     return JustgageComponent;
 }());
