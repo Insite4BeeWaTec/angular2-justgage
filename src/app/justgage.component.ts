@@ -12,7 +12,7 @@ export class JustgageComponent implements OnInit, OnChanges {
 
   @Input() options: any = {};
   @Input() value: number = 0;
-  @Input() min: number = 100;
+  @Input() min: number = 0;
   @Input() max: number = 100;
   @Input() unit: string = "";
   @Input() backgroundForegroundSwapped: boolean = false;
@@ -37,6 +37,7 @@ export class JustgageComponent implements OnInit, OnChanges {
     delete this.options.id;
     this.options.parentNode = this.elementRef.nativeElement;
     this.options.max = this.max;
+    this.options.min = this.min;
     this.options.value = this.value;
     this.options.unit = this.unit;
     this.options.backgroundForegroundSwapped = this.backgroundForegroundSwapped;
