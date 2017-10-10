@@ -15,6 +15,7 @@ export class JustgageComponent implements OnInit, OnChanges {
   @Input() min: number = 0;
   @Input() max: number = 100;
   @Input() unit: string = "";
+  @Input() title: string = "";
   @Input() backgroundForegroundSwapped: boolean = false;
 
   constructor(private elementRef: ElementRef) { }
@@ -29,6 +30,7 @@ export class JustgageComponent implements OnInit, OnChanges {
       if(changes['min']) this.justgage.setNewMin(this.min)
       if(changes['unit']) this.justgage.setNewUnit(this.unit)
       if(changes['value']) this.justgage.setNewValue(this.value);
+      if(changes['title']) this.justgage.setNewTitle(this.title);
       if(changes['backgroundForegroundSwapped']) this.justgage.setBackgroundForegroundSwapped(this.backgroundForegroundSwapped);
     }
   }
